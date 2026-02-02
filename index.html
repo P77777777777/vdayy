@@ -22,6 +22,7 @@
       text-align: center;
       border-radius: 12px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      position: relative;
     }
 
     .card img {
@@ -58,22 +59,38 @@
       background: #ccc;
       position: absolute;
     }
+
+    /* ukryty komunikat */
+    .message {
+      display: none;
+      font-size: 22px;
+      color: #ff4d6d;
+      font-weight: bold;
+      margin-top: 20px;
+    }
   </style>
 </head>
 
 <body>
   <div class="card">
-    <img src="pies.jpg" alt="Kotek">
-    <h1>hej oluś zostaniesz moją walentynką? </h1>
+    <img src="pies.jpg" alt="Piesek">
+    <h1>hej oluś, zostaniesz moją walentynką? 💖</h1>
 
-    <div class="buttons">
-      <button id="yes" onclick="alert('deal🙂‍↕️🤘🏻')">Tak</button>
+    <div class="buttons" id="buttons">
+      <button id="yes">Tak</button>
       <button id="no">Nie</button>
+    </div>
+
+    <div class="message" id="message">
+      deal 🙂‍↕️🤘🏻
     </div>
   </div>
 
   <script>
     const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+    const buttons = document.getElementById("buttons");
+    const message = document.getElementById("message");
 
     noBtn.addEventListener("mouseover", () => {
       const x = Math.random() * 200;
@@ -81,6 +98,11 @@
 
       noBtn.style.left = x + "px";
       noBtn.style.top = y + "px";
+    });
+
+    yesBtn.addEventListener("click", () => {
+      buttons.style.display = "none";
+      message.style.display = "block";
     });
   </script>
 </body>
