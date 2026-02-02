@@ -41,5 +41,47 @@
     }
 
     button {
-      paddin
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
 
+    #yes {
+      background: #ff4d6d;
+      color: white;
+      margin-right: 10px;
+    }
+
+    #no {
+      background: #ccc;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <img src="https://placekitten.com/400/300" alt="Kotek">
+    <h1>Czy zostaniesz moją walentynką? 💖</h1>
+
+    <div class="buttons">
+      <button id="yes" onclick="alert('Wiedziałem 😍💖')">Tak</button>
+      <button id="no">Nie</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 200;
+      const y = Math.random() * 40;
+
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+  </script>
+</body>
+</html>
